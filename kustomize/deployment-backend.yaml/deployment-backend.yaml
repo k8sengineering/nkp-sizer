@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nkp-sizer-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nkp-sizer-backend
+  template:
+    metadata:
+      labels:
+        app: nkp-sizer-backend
+    spec:
+      containers:
+      - name: backend
+        image: your-docker-username/nkp-sizer-backend:latest
+        ports:
+        - containerPort: 5000
+

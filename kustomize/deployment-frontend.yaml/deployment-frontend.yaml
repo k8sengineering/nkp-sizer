@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nkp-sizer-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nkp-sizer-frontend
+  template:
+    metadata:
+      labels:
+        app: nkp-sizer-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: your-docker-username/nkp-sizer-frontend:latest
+        ports:
+        - containerPort: 3000
+
